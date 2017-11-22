@@ -1,0 +1,62 @@
+<html> 
+<head>
+<script src="web3.min.js"></script>
+<script>
+
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+
+var greeter_abi = JSON.parse('[{"constant":false,"inputs":[],"name":"kill","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[],"name":"greet","outputs":[{"name":"","type":"string"}],"payable":false,"type":"function"},{"inputs":[{"name":"_greeting","type":"string"}],"payable":false,"type":"constructor"}]');
+
+var greeter = web3.eth.contract(greeter_abi);
+
+var greeterInstance = greeter.at('0x1830cfbef5e6cfb2dcfaf428eab5f5c494e129a5');
+
+</script>
+
+
+</head>
+<body>
+
+My Default Account :   <span id="defAccount"></span> <br>
+My Wei balance: <span id="balanceinWei"></span><br>
+Converted to Ether: <span id="balanceinEther"></span><br>
+Last Block: <span id="latestBlock"></span><br>
+Last Block Timestamp: <span id="latestBlockTimestamp"></span><br>
+
+Text from Greeter Call: <span id="greeting_text"></span>
+
+</body>
+
+<script>
+
+  document.getElementById("defAccount").innerText = web3.eth.accounts[0];
+  
+  web3.eth.getBalance(web3.eth.accounts[0], function(err, result) {
+        var resultInWei = result.toString(10);
+        var resultInEther = web3.fromWei(result);
+
+        document.getElementById("balanceinWei").innerText = ""+resultInWei;
+        document.getElementById("balanceinEther").innerText = ""+resultInEther;
+    });
+
+
+  web3.eth.filter('latest').watch(function(){
+    web3.eth.getBlock('pending', function(error, result){
+        var blockNumber = result.number;
+        
+        document.getElementById('latestBlock').innerHTML = result.number;
+        document.getElementById('latestBlockTimestamp').innerHTML = Date(result.timeStamp);
+
+  })
+  });
+
+   
+  document.getElementById("greeting_text").innerHTML = greeterInstance.greet.call();
+
+  
+
+</script>
+
+</html>
+
