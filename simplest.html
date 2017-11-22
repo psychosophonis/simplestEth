@@ -1,0 +1,52 @@
+<html> 
+<head>
+<script src="web3.min.js"></script>
+<script>
+var web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+
+</script>
+
+
+</head>
+<body>
+
+My Default Account :   <span id="defAccount"></span> <br>
+My Wei balance: <span id="balanceinWei"></span><br>
+Converted to Ether: <span id="balanceinEther"></span><br>
+Last Block: <span id="latestBlock"></span><br>
+Last Block Timestamp: <span id="latestBlockTimestamp"></span>
+
+</body>
+
+<script>
+
+  document.getElementById("defAccount").innerText = web3.eth.accounts[0];;
+ //document.getElementById("account0").innerText = web3.eth.acounts[0];
+
+  web3.eth.getBalance(web3.eth.accounts[0], function(err, result) {
+
+        var resultInWei = result.toString(10);
+        var resultInEther = web3.fromWei(result);
+
+        document.getElementById("balanceinWei").innerText = ""+resultInWei;
+        document.getElementById("balanceinEther").innerText = ""+resultInEther;
+    });
+
+
+  web3.eth.filter('latest').watch(function(){
+  web3.eth.getBlock('pending', function(error, result){
+  var blockNumber = result.number;
+
+  document.getElementById('latestBlock').innerHTML = result.number;
+  document.getElementById('latestBlockTimestamp').innerHTML = Date(result.timeStamp);
+
+
+    })
+  });
+
+
+
+</script>
+
+</html>
+
