@@ -31,12 +31,14 @@ Metamask to provide nonlocal hosting of accounts to be used with Infuria (To be 
 Simple Transactions (needs simplifying but wishwell examples currently cover this).
 This is an enitre truffle project directory and you will need to use truffle to test it.
 
+https://github.com/psychosophonis/wishwell
+
 ### Step Six:
 
 Event and Log interactions (needs simplifying but wishwell examples currently cover this).
 This is an enitre truffle project directory and you will need to use truffle to test it.
 
-
+https://github.com/psychosophonis/wishwell
 
 
 
