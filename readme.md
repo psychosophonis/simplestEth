@@ -1,6 +1,7 @@
 ## Step by Step demonstration of simple Ethereum blockchain/contract to javascript interactions.
 
-These only require the web3 library that is included in the folder and will run by loading the file directly in the browser.
+These only require the [web3.min.js](minified web3 library) that is included in the folder and will run by loading the file directly in the browser.
+You should be able to clone or download this entire folder and run the examples.
 
 ### Step One: 
 
