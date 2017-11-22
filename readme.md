@@ -22,4 +22,19 @@ Replacing local web3 with infuria hosted node and demonstrating form submission 
 
 [Simplest3.html](simplest3.html])
 
+### Step Four:
+
+Metamask to provide nonlocal hosting of accounts to be used with Infuria (To be written).
+
+### Step Five:
+
+Simple Transactions (needs simplifying but wishwell examples currently cover this).
+
+### Step Six:
+
+Event and Log interactions (currently demostrated here needs a simplified example).
+
+
+
+
 
