@@ -7,21 +7,21 @@ You should be able to clone or download this entire folder and run the examples.
 
 A Simple call to local node and accounts via Ethereum Javascript API.
 
-[simplest.html](simplest.html])
+[simplest.html](simplest.html)
 
 
 ### Step Two: 
 
 Adding a contract call to an existing greeter contract.
 
-[simplest2.html](simplest2.html])
+[simplest2.html](simplest2.html)
 
 
 ### Step Three: 
 
 Replacing local web3 with infuria hosted node and demonstrating form submission to query an address (we no longer have access to our local accounts).
 
-[simplest3.html](simplest3.html])
+[simplest3.html](simplest3.html)
 
 ### Step Four:
 
